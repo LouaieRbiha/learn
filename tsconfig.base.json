@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@learn/shared/otp": ["libs/shared/otp/src/index.ts"],
       "@learn/util": ["libs/util/src/index.ts"]
     }
   },
