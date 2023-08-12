@@ -1,7 +1,7 @@
 {
-  "name": "shared-otp",
+  "name": "shared-tabs",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/shared/otp/src",
+  "sourceRoot": "libs/shared/tabs/src",
   "prefix": "learn",
   "tags": [],
   "projectType": "library",
@@ -10,15 +10,14 @@
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/shared/otp/ng-package.json",
-        "updateBuildableProjectDepsInPackageJson": true
+        "project": "libs/shared/tabs/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/shared/otp/tsconfig.lib.prod.json"
+          "tsConfig": "libs/shared/tabs/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/shared/otp/tsconfig.lib.json"
+          "tsConfig": "libs/shared/tabs/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
@@ -27,7 +26,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/shared/otp/jest.config.ts",
+        "jestConfig": "libs/shared/tabs/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -42,8 +41,9 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "libs/shared/otp/**/*.ts",
-          "libs/shared/otp/**/*.html"
+          "libs/shared/tabs/**/*.ts",
+          "libs/shared/tabs/**/*.html",
+          "libs/shared/tabs/package.json"
         ]
       }
     }

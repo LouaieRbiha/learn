@@ -1,0 +1,11 @@
+<button
+  [ngClass]="activeTabIndex === i ? 'active' : null"
+  *ngFor="let tab of tabs; let i = index"
+  (click)="selectTab(i)"
+>
+  {{ tab.name | titlecase }}
+</button>
+
+<div class="tab-container">
+  <ng-content *ngTemplateOutlet="currentTab" />
+</div>

@@ -9,6 +9,4 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
-  title = 'learn';
-}
+export class AppComponent {}

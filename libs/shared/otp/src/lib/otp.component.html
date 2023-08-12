@@ -1,3 +1,7 @@
-<ng-container *ngFor="let code of otpCode" >
-  <learn-otp-input [inputValue]="code" />
-</ng-container>
+<button (click)="fillArray(0, 0)">index 0</button>
+<button (click)="fillArray(1, 1)">index 1</button>
+<button (click)="fillArray(2, 2)">index 2</button>
+<button (click)="fillArray(3, 3)">index 3</button>
+
+array : {{ arr$ | async | json }}<br />
+Tracker : {{ myObs$ | async }}
