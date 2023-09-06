@@ -16,4 +16,9 @@ export const appRoutes: Route[] = [
     loadComponent: () =>
       import('@learn/shared/tabs').then((m) => m.TabDisplayComponent),
   },
+  {
+    path: 'gallery',
+    loadComponent: () =>
+      import('@learn/gallery/feature').then((m) => m.GalleryComponent),
+  },
 ];

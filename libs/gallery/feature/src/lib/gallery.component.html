@@ -1,0 +1,4 @@
+<learn-photo />
+ <div *ngIf="photos$ |async as photo">
+  <img [src]="photo.src.medium"/>
+ </div>

@@ -35,6 +35,21 @@ dependencies:
   '@angular/router':
     specifier: 16.1.7
     version: 16.1.7(@angular/common@16.1.7)(@angular/core@16.1.7)(@angular/platform-browser@16.1.7)(rxjs@7.8.0)
+  '@ngrx/component-store':
+    specifier: ^16.2.0
+    version: 16.2.0(@angular/core@16.1.7)(rxjs@7.8.0)
+  '@ngrx/effects':
+    specifier: ^16.2.0
+    version: 16.2.0(@angular/core@16.1.7)(@ngrx/store@16.2.0)(rxjs@7.8.0)
+  '@ngrx/entity':
+    specifier: ^16.2.0
+    version: 16.2.0(@angular/core@16.1.7)(@ngrx/store@16.2.0)(rxjs@7.8.0)
+  '@ngrx/router-store':
+    specifier: ^16.2.0
+    version: 16.2.0(@angular/common@16.1.7)(@angular/core@16.1.7)(@angular/router@16.1.7)(@ngrx/store@16.2.0)(rxjs@7.8.0)
+  '@ngrx/store':
+    specifier: ^16.2.0
+    version: 16.2.0(@angular/core@16.1.7)(rxjs@7.8.0)
   '@nx/angular':
     specifier: 16.6.0
     version: 16.6.0(@angular-devkit/build-angular@16.1.6)(@angular-devkit/core@16.1.6)(@angular-devkit/schematics@16.1.6)(@schematics/angular@16.1.6)(@types/node@16.11.7)(cypress@12.17.2)(esbuild@0.17.19)(eslint@8.15.0)(nx@16.6.0)(rxjs@7.8.0)(ts-node@10.9.1)(typescript@5.1.6)
@@ -79,6 +94,12 @@ devDependencies:
   '@ngneat/spectator':
     specifier: ^15.0.1
     version: 15.0.1(@angular/animations@16.1.7)(@angular/common@16.1.7)(@angular/router@16.1.7)
+  '@ngrx/schematics':
+    specifier: ^16.2.0
+    version: 16.2.0
+  '@ngrx/store-devtools':
+    specifier: ^16.2.0
+    version: 16.2.0(@ngrx/store@16.2.0)(rxjs@7.8.0)
   '@nx/cypress':
     specifier: 16.6.0
     version: 16.6.0(@types/node@16.11.7)(cypress@12.17.2)(eslint@8.15.0)(nx@16.6.0)(typescript@5.1.6)
@@ -127,6 +148,9 @@ devDependencies:
   eslint-plugin-cypress:
     specifier: ^2.10.3
     version: 2.10.3(eslint@8.15.0)
+  jasmine-marbles:
+    specifier: ~0.9.1
+    version: 0.9.1(rxjs@7.8.0)
   jest:
     specifier: ^29.4.1
     version: 29.4.1(@types/node@16.11.7)(ts-node@10.9.1)
@@ -4536,6 +4560,85 @@ packages:
       replace-in-file: 6.2.0
       tslib: 2.5.0
     dev: true
+
+  /@ngrx/component-store@16.2.0(@angular/core@16.1.7)(rxjs@7.8.0):
+    resolution: {integrity: sha512-XpLt2AY6BiITv/pQjr0ATNMRflxY0XWy/DRMaTvoR7DPH5o3E/wojbogpj9lDi07rTWmONlvmbUuUoF5QmKB0Q==}
+    peerDependencies:
+      '@angular/core': ^16.0.0
+      rxjs: ^6.5.3 || ^7.5.0
+    dependencies:
+      '@angular/core': 16.1.7(rxjs@7.8.0)(zone.js@0.13.0)
+      rxjs: 7.8.0
+      tslib: 2.5.3
+    dev: false
+
+  /@ngrx/effects@16.2.0(@angular/core@16.1.7)(@ngrx/store@16.2.0)(rxjs@7.8.0):
+    resolution: {integrity: sha512-zZfq47LNoiRK+uS66Xm36mN07zm11AER1D9lTalX/G6jrV0bywgnAaukNNav9E33ZRrPEnCD8uu9BXZoboEYgA==}
+    peerDependencies:
+      '@angular/core': ^16.0.0
+      '@ngrx/store': 16.2.0
+      rxjs: ^6.5.3 || ^7.5.0
+    dependencies:
+      '@angular/core': 16.1.7(rxjs@7.8.0)(zone.js@0.13.0)
+      '@ngrx/store': 16.2.0(@angular/core@16.1.7)(rxjs@7.8.0)
+      rxjs: 7.8.0
+      tslib: 2.5.3
+    dev: false
+
+  /@ngrx/entity@16.2.0(@angular/core@16.1.7)(@ngrx/store@16.2.0)(rxjs@7.8.0):
+    resolution: {integrity: sha512-n8Vsz48/u14R8S7akLO7TWmqXGcvCYacCIS106hC3FVkOwAOflhcstGYu6oShbqOVuu0Vcw7s/amc2oAJV4YkQ==}
+    peerDependencies:
+      '@angular/core': ^16.0.0
+      '@ngrx/store': 16.2.0
+      rxjs: ^6.5.3 || ^7.5.0
+    dependencies:
+      '@angular/core': 16.1.7(rxjs@7.8.0)(zone.js@0.13.0)
+      '@ngrx/store': 16.2.0(@angular/core@16.1.7)(rxjs@7.8.0)
+      rxjs: 7.8.0
+      tslib: 2.5.3
+    dev: false
+
+  /@ngrx/router-store@16.2.0(@angular/common@16.1.7)(@angular/core@16.1.7)(@angular/router@16.1.7)(@ngrx/store@16.2.0)(rxjs@7.8.0):
+    resolution: {integrity: sha512-nVqIKWqJnE7pKpcTg6vUpWZtjIwnh66LhJ3hcNLpWRTAzyhQh6EZuYvZX3XSVmdR9XIUltlBCFGCrmTRkeWrTg==}
+    peerDependencies:
+      '@angular/common': ^16.0.0
+      '@angular/core': ^16.0.0
+      '@angular/router': ^16.0.0
+      '@ngrx/store': 16.2.0
+      rxjs: ^6.5.3 || ^7.5.0
+    dependencies:
+      '@angular/common': 16.1.7(@angular/core@16.1.7)(rxjs@7.8.0)
+      '@angular/core': 16.1.7(rxjs@7.8.0)(zone.js@0.13.0)
+      '@angular/router': 16.1.7(@angular/common@16.1.7)(@angular/core@16.1.7)(@angular/platform-browser@16.1.7)(rxjs@7.8.0)
+      '@ngrx/store': 16.2.0(@angular/core@16.1.7)(rxjs@7.8.0)
+      rxjs: 7.8.0
+      tslib: 2.5.3
+    dev: false
+
+  /@ngrx/schematics@16.2.0:
+    resolution: {integrity: sha512-AfRgSCYhrg9+b3KjcLNS1BTuRKcf8XR2GkplBLZK5NFK8nQc9/JtmLk4PoUtKTL8BFAhDmXBPziAWKMwupjzlw==}
+    dev: true
+
+  /@ngrx/store-devtools@16.2.0(@ngrx/store@16.2.0)(rxjs@7.8.0):
+    resolution: {integrity: sha512-m7mkNpIIp8fA8yNG5T0ZKm1RCP2fE0IVBEtcbj2Z/88fW4vyvobVBdBqha6zgYTuA5X4m28npMra9GPNPsuDLA==}
+    peerDependencies:
+      '@ngrx/store': 16.2.0
+      rxjs: ^6.5.3 || ^7.5.0
+    dependencies:
+      '@ngrx/store': 16.2.0(@angular/core@16.1.7)(rxjs@7.8.0)
+      rxjs: 7.8.0
+      tslib: 2.5.3
+    dev: true
+
+  /@ngrx/store@16.2.0(@angular/core@16.1.7)(rxjs@7.8.0):
+    resolution: {integrity: sha512-C7oIUC87xXV+1dTGUwYG/L4p0IZdYv/Ou1nTL/LffyAHllmmygTA5gzLB87abLOhucAxlFIQMQ8t/GSxdk/+QA==}
+    peerDependencies:
+      '@angular/core': ^16.0.0
+      rxjs: ^6.5.3 || ^7.5.0
+    dependencies:
+      '@angular/core': 16.1.7(rxjs@7.8.0)(zone.js@0.13.0)
+      rxjs: 7.8.0
+      tslib: 2.5.3
 
   /@ngtools/webpack@16.1.6(@angular/compiler-cli@16.1.7)(typescript@5.1.6)(webpack@5.86.0):
     resolution: {integrity: sha512-rDE1bV3+Ys/VyeD6l7JKtbs3+bTQAfWhi7meEuq5mkaJHOERu6Z40ce866faAIX2I1AVpsSv8rLlb7kB7t7kzw==}
@@ -9072,6 +9175,15 @@ packages:
       chalk: 4.1.2
       filelist: 1.0.4
       minimatch: 3.1.2
+
+  /jasmine-marbles@0.9.1(rxjs@7.8.0):
+    resolution: {integrity: sha512-25Chb942ory0DlHmVujMsA/rMNLhsmXkEVegrXJZL+T9jZGDZyFTnH9Eb91/WIfNFuXwtGms7KzFNbuR8GIrqw==}
+    peerDependencies:
+      rxjs: ^7.0.0
+    dependencies:
+      lodash: 4.17.21
+      rxjs: 7.8.0
+    dev: true
 
   /jest-changed-files@29.5.0:
     resolution: {integrity: sha512-IFG34IUMUaNBIxjQXF/iu7g6EcdMrGRRxaUSw92I/2g2YC6vCdTltl4nHvt7Ci5nSJwXIkCu8Ka1DKF+X7Z1Ag==}
