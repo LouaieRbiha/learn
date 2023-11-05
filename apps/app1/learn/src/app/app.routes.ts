@@ -21,4 +21,9 @@ export const appRoutes: Route[] = [
     loadComponent: () =>
       import('@learn/gallery/feature').then((m) => m.GalleryComponent),
   },
+  {
+    path: 'signals',
+    loadComponent: () =>
+      import('@learn/signals').then((m) => m.SignalsComponent),
+  },
 ];
