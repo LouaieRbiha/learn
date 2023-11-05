@@ -17,6 +17,8 @@
     "paths": {
       "@learn/gallery/data-access": ["libs/gallery/data-access/src/index.ts"],
       "@learn/gallery/feature": ["libs/gallery/feature/src/index.ts"],
+      "@learn/gallery/test": ["libs/gallery/test/src/index.ts"],
+      "@learn/gallery/xdd": ["libs/gallery/xdd/src/index.ts"],
       "@learn/shared/otp": ["libs/shared/otp/src/index.ts"],
       "@learn/shared/tabs": ["libs/shared/tabs/src/index.ts"],
       "@learn/util": ["libs/util/src/index.ts"]
