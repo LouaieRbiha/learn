@@ -1,5 +1,5 @@
 import { AsyncPipe, JsonPipe, NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { type Observable, map, BehaviorSubject, take } from 'rxjs';
 
 @Component({
@@ -14,7 +14,7 @@ export class OtpComponent implements OnInit {
   // listen to array changes with rxjs (done)
   // listen to input event
   // listen to mouseEvent
-  // redo the otp with functions and better logic
+  // redo the otp with functions and better logic$
 
   private arrSource = new BehaviorSubject<any[]>(Array(4).fill(null));
   arr$: Observable<any[]> = this.arrSource.asObservable();

@@ -26,4 +26,12 @@ export const appRoutes: Route[] = [
     loadComponent: () =>
       import('@learn/signals').then((m) => m.SignalsComponent),
   },
+  {
+    path: 'signals/:id',
+    loadComponent: () =>
+      import('@learn/signals').then((m) => m.SignalsComponent),
+    data: {
+      title: 'Learn',
+    },
+  },
 ];
