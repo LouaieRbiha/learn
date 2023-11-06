@@ -1,5 +1,9 @@
 import { Route } from '@angular/router';
 import { AppComponent } from './app.component';
+import { provideEffects } from '@ngrx/effects';
+import * as pictureEffects from '@learn/gallery/data-access';
+import { provideState } from '@ngrx/store';
+import { pictureReducer } from '@learn/gallery/data-access';
 
 export const appRoutes: Route[] = [
   {
@@ -20,6 +24,10 @@ export const appRoutes: Route[] = [
     path: 'gallery',
     loadComponent: () =>
       import('@learn/gallery/feature').then((m) => m.GalleryComponent),
+    providers: [
+      provideEffects(pictureEffects as any),
+      provideState('Picture', pictureReducer),
+    ],
   },
   {
     path: 'signals',

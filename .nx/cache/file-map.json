@@ -257,21 +257,23 @@
         },
         {
           "file": "apps/app1/learn/src/app/app.config.ts",
-          "hash": "16647438982278344394",
+          "hash": "11354296469934825051",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router",
             "npm:@angular/common",
             "npm:@ngrx/store",
-            "npm:@ngrx/effects",
             "npm:@ngrx/store-devtools"
           ]
         },
         {
           "file": "apps/app1/learn/src/app/app.routes.ts",
-          "hash": "16783573310356123370",
+          "hash": "10415598937171476440",
           "deps": [
             "npm:@angular/router",
+            "npm:@ngrx/effects",
+            "gallery-data-access",
+            "npm:@ngrx/store",
             "shared-otp",
             "shared-tabs",
             "gallery-feature",
@@ -499,11 +501,11 @@
         },
         {
           "file": "libs/gallery/feature/src/lib/gallery.component.html",
-          "hash": "3989003367565658441"
+          "hash": "2146239615736866835"
         },
         {
           "file": "libs/gallery/feature/src/lib/gallery.component.scss",
-          "hash": "13027103444035360129"
+          "hash": "10224269227566378507"
         },
         {
           "file": "libs/gallery/feature/src/lib/gallery.component.spec.ts",
@@ -514,11 +516,12 @@
         },
         {
           "file": "libs/gallery/feature/src/lib/gallery.component.ts",
-          "hash": "7600541744979345361",
+          "hash": "2779833231670870828",
           "deps": [
             "npm:@angular/core",
-            "gallery-data-access",
-            "npm:@angular/common"
+            "npm:@angular/common",
+            "npm:@ngrx/store",
+            "gallery-data-access"
           ]
         },
         {
@@ -599,18 +602,23 @@
         },
         {
           "file": "libs/gallery/data-access/src/index.ts",
-          "hash": "9828278877476581662"
+          "hash": "10623692527588526637"
         },
         {
           "file": "libs/gallery/data-access/src/lib/picture.actions.ts",
-          "hash": "1191114467937635073",
+          "hash": "16761930004661078993",
           "deps": [
             "npm:@ngrx/store"
           ]
         },
         {
           "file": "libs/gallery/data-access/src/lib/picture.effects.ts",
-          "hash": "3244421341483603138"
+          "hash": "17933806752568069821",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ngrx/effects",
+            "npm:rxjs"
+          ]
         },
         {
           "file": "libs/gallery/data-access/src/lib/picture.facade.ts",
@@ -622,7 +630,7 @@
         },
         {
           "file": "libs/gallery/data-access/src/lib/picture.reducer.ts",
-          "hash": "10855541868028733870",
+          "hash": "11864314567692303103",
           "deps": [
             "npm:@ngrx/store"
           ]
@@ -633,7 +641,7 @@
         },
         {
           "file": "libs/gallery/data-access/src/lib/picture.selectors.ts",
-          "hash": "9244181116754541726",
+          "hash": "13631895839141798632",
           "deps": [
             "npm:@ngrx/store"
           ]
@@ -647,7 +655,7 @@
         },
         {
           "file": "libs/gallery/data-access/src/lib/picture.service.ts",
-          "hash": "6450425217305137971",
+          "hash": "9732993551685037134",
           "deps": [
             "npm:@angular/core",
             "npm:rxjs",

@@ -23,6 +23,6 @@ export class PictureService {
 
     return this.#http
       .get(`${this.#pexelsUrl}/search`, { headers, params })
-      .pipe(map((res: any) => res.photos[0]));
+      .pipe(map((res: any) => res.photos));
   }
 }
