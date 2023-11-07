@@ -9,7 +9,7 @@ export const loadPicturesEffect = createEffect(
     return actions$.pipe(
       ofType(PictureActions.loadPictures),
       exhaustMap(() => {
-        return pictureService.searchPhotos('cat').pipe(
+        return pictureService.searchPhotos('gym').pipe(
           map((pictures) => PictureActions.loadPicturesSuccess({ pictures })),
           catchError((error: any) =>
             of(PictureActions.loadPicturesFailure({ error: error.message }))
