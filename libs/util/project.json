@@ -10,8 +10,7 @@
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/util/ng-package.json",
-        "updateBuildableProjectDepsInPackageJson": true
+        "project": "libs/util/ng-package.json"
       },
       "configurations": {
         "production": {
@@ -41,7 +40,11 @@
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/util/**/*.ts", "libs/util/**/*.html"]
+        "lintFilePatterns": [
+          "libs/util/**/*.ts",
+          "libs/util/**/*.html",
+          "libs/util/package.json"
+        ]
       }
     }
   }

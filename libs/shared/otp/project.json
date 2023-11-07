@@ -10,8 +10,7 @@
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/shared/otp/ng-package.json",
-        "updateBuildableProjectDepsInPackageJson": true
+        "project": "libs/shared/otp/ng-package.json"
       },
       "configurations": {
         "production": {
@@ -43,7 +42,8 @@
       "options": {
         "lintFilePatterns": [
           "libs/shared/otp/**/*.ts",
-          "libs/shared/otp/**/*.html"
+          "libs/shared/otp/**/*.html",
+          "libs/shared/otp/package.json"
         ]
       }
     }
