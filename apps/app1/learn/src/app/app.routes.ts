@@ -43,7 +43,7 @@ export const appRoutes: Route[] = [
     },
   },
   {
-    path: 'graph',
-    loadComponent: () => import('@learn/graph').then((m) => m.GraphComponent),
+    path: 'worker',
+    loadComponent: () => import('@learn/graph').then((m) => m.WorkerComponent),
   },
 ];

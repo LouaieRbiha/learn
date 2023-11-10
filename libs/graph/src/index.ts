@@ -1,1 +1,1 @@
-export * from './lib/graph.component';
+export * from './lib/worker.component';

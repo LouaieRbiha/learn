@@ -23,7 +23,8 @@
           "@angular/material/prebuilt-themes/indigo-pink.css",
           "apps/app1/learn/src/styles.scss"
         ],
-        "scripts": []
+        "scripts": [],
+        "webWorkerTsConfig": "apps/app1/learn/tsconfig.worker.json"
       },
       "configurations": {
         "production": {
@@ -91,7 +92,8 @@
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/app1/learn/jest.config.ts",
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "webWorkerTsConfig": "apps/app1/learn/tsconfig.worker.json"
       },
       "configurations": {
         "ci": {
