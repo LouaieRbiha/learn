@@ -495,63 +495,6 @@
         "implicitDependencies": []
       }
     },
-    "gallery-xdd": {
-      "name": "gallery-xdd",
-      "type": "lib",
-      "data": {
-        "name": "gallery-xdd",
-        "root": "libs/gallery/xdd",
-        "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-        "sourceRoot": "libs/gallery/xdd/src",
-        "prefix": "learn",
-        "tags": [],
-        "projectType": "library",
-        "targets": {
-          "test": {
-            "inputs": [
-              "default",
-              "^production",
-              "{workspaceRoot}/jest.preset.js"
-            ],
-            "cache": true,
-            "executor": "@nx/jest:jest",
-            "outputs": [
-              "{workspaceRoot}/coverage/{projectRoot}"
-            ],
-            "options": {
-              "jestConfig": "libs/gallery/xdd/jest.config.ts",
-              "passWithNoTests": true
-            },
-            "configurations": {
-              "ci": {
-                "ci": true,
-                "codeCoverage": true
-              }
-            }
-          },
-          "lint": {
-            "inputs": [
-              "default",
-              "{workspaceRoot}/.eslintrc.json",
-              "{workspaceRoot}/.eslintignore"
-            ],
-            "cache": true,
-            "executor": "@nx/eslint:lint",
-            "outputs": [
-              "{options.outputFile}"
-            ],
-            "options": {
-              "lintFilePatterns": [
-                "libs/gallery/xdd/**/*.ts",
-                "libs/gallery/xdd/**/*.html"
-              ]
-            },
-            "configurations": {}
-          }
-        },
-        "implicitDependencies": []
-      }
-    },
     "shared-tabs": {
       "name": "shared-tabs",
       "type": "lib",
@@ -636,6 +579,63 @@
                 "libs/shared/tabs/**/*.ts",
                 "libs/shared/tabs/**/*.html",
                 "libs/shared/tabs/package.json"
+              ]
+            },
+            "configurations": {}
+          }
+        },
+        "implicitDependencies": []
+      }
+    },
+    "gallery-xdd": {
+      "name": "gallery-xdd",
+      "type": "lib",
+      "data": {
+        "name": "gallery-xdd",
+        "root": "libs/gallery/xdd",
+        "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/gallery/xdd/src",
+        "prefix": "learn",
+        "tags": [],
+        "projectType": "library",
+        "targets": {
+          "test": {
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ],
+            "cache": true,
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "libs/gallery/xdd/jest.config.ts",
+              "passWithNoTests": true
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            }
+          },
+          "lint": {
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore"
+            ],
+            "cache": true,
+            "executor": "@nx/eslint:lint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {
+              "lintFilePatterns": [
+                "libs/gallery/xdd/**/*.ts",
+                "libs/gallery/xdd/**/*.html"
               ]
             },
             "configurations": {}
@@ -16557,23 +16557,6 @@
         "type": "static"
       }
     ],
-    "gallery-xdd": [
-      {
-        "source": "gallery-xdd",
-        "target": "npm:@angular/core",
-        "type": "static"
-      },
-      {
-        "source": "gallery-xdd",
-        "target": "npm:@angular/common",
-        "type": "static"
-      },
-      {
-        "source": "gallery-xdd",
-        "target": "npm:jest-preset-angular",
-        "type": "static"
-      }
-    ],
     "shared-tabs": [
       {
         "source": "shared-tabs",
@@ -16592,6 +16575,23 @@
       },
       {
         "source": "shared-tabs",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
+    "gallery-xdd": [
+      {
+        "source": "gallery-xdd",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "gallery-xdd",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "gallery-xdd",
         "target": "npm:jest-preset-angular",
         "type": "static"
       }

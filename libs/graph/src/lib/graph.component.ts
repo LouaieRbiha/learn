@@ -29,6 +29,10 @@ export class GraphComponent implements AfterViewInit, OnDestroy {
     private zone: NgZone
   ) {}
 
+  worker: Worker = new Worker(new URL('./graph.worker', import.meta.url), {
+    type: 'module',
+  });
+
   // Run the function only in the browser
   browserOnly(f: () => void) {
     if (isPlatformBrowser(this.platformId)) {
