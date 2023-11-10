@@ -32,4 +32,20 @@ export class WorkerComponent {
     this.isDisabled = true;
     this.#worker.postMessage(time);
   }
+
+  callExpensiveComputation() {
+    let result = 0;
+
+    for (let i = 0; i < 1000000000; i++) {
+      // Some complex computation
+      result += Math.pow(i, 2) + Math.sqrt(i) * 3.14;
+    }
+
+    console.log('result :>> ', result);
+    return result;
+  }
+
+  test() {
+    alert('test');
+  }
 }
