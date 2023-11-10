@@ -42,4 +42,8 @@ export const appRoutes: Route[] = [
       title: 'Learn',
     },
   },
+  {
+    path: 'graph',
+    loadComponent: () => import('@learn/graph').then((m) => m.GraphComponent),
+  },
 ];

@@ -8,6 +8,9 @@
   },
   "private": true,
   "dependencies": {
+    "@amcharts/amcharts5": "^5.5.6",
+    "@amcharts/amcharts5-fonts": "^5.0.1",
+    "@amcharts/amcharts5-geodata": "^5.1.1",
     "@angular/animations": "16.2.11",
     "@angular/cdk": "16.2.10",
     "@angular/common": "16.2.11",
