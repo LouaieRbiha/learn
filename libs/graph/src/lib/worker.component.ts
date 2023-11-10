@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 
 @Component({
   selector: 'learn-worker',
@@ -7,29 +7,29 @@ import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
   templateUrl: './worker.component.html',
   styleUrls: ['./worker.component.scss'],
 })
-export class WorkerComponent implements OnInit {
+export class WorkerComponent {
   readonly #cd = inject(ChangeDetectorRef);
-  worker: Worker = new Worker(
-    new URL(
-      '../../../../apps/app1/learn/src/app/web.worker.ts',
-      import.meta.url
-    )
-  );
+  #worker!: Worker;
 
   isDisabled = false;
 
-  ngOnInit(): void {
-    this.worker.onmessage = ({ data }) => {
+  callWorker(time: number) {
+    this.#worker = new Worker(
+      new URL(
+        '../../../../apps/app1/learn/src/app/web.worker.ts',
+        import.meta.url
+      )
+    );
+
+    this.#worker.onmessage = ({ data }) => {
       console.log(`component got message ${data}`);
 
       this.isDisabled = data;
 
       this.#cd.detectChanges();
     };
-  }
 
-  callWorker(time: number) {
     this.isDisabled = true;
-    this.worker.postMessage(time);
+    this.#worker.postMessage(time);
   }
 }

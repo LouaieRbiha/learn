@@ -1067,7 +1067,7 @@
         },
         {
           "file": "libs/graph/src/lib/worker.component.ts",
-          "hash": "13249080105068257383",
+          "hash": "12126732949153873862",
           "deps": [
             "npm:@angular/core"
           ]
