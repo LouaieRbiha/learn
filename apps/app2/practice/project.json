@@ -56,10 +56,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "app2-practice:build:production"
+          "buildTarget": "app2-practice:build:production"
         },
         "development": {
-          "browserTarget": "app2-practice:build:development"
+          "buildTarget": "app2-practice:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -67,7 +67,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "app2-practice:build"
+        "buildTarget": "app2-practice:build"
       }
     },
     "lint": {
@@ -84,14 +84,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/app2/practice/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "jestConfig": "apps/app2/practice/jest.config.ts"
       }
     },
     "serve-static": {
