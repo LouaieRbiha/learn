@@ -4,7 +4,6 @@ import {
   Injector,
   Input,
   OnInit,
-  computed,
   effect,
   inject,
   runInInjectionContext,
@@ -62,7 +61,7 @@ export class SignalsComponent implements OnInit {
     console.log('this.title :>> ', this.title);
 
     runInInjectionContext(this.#injector, () => {
-      const obs = toObservable(this.dateSignal)
+      toObservable(this.dateSignal)
         .pipe(
           map((data) => {
             console.log('data', data);

@@ -46,4 +46,8 @@ export const appRoutes: Route[] = [
     path: 'worker',
     loadComponent: () => import('@learn/graph').then((m) => m.WorkerComponent),
   },
+  {
+    path: 'defer',
+    loadComponent: () => import('@learn/defer').then((m) => m.DeferComponent),
+  },
 ];

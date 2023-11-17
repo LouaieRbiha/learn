@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@learn/defer": ["libs/defer/src/index.ts"],
       "@learn/gallery/data-access": ["libs/gallery/data-access/src/index.ts"],
       "@learn/gallery/feature": ["libs/gallery/feature/src/index.ts"],
       "@learn/gallery/test": ["libs/gallery/test/src/index.ts"],
