@@ -25,6 +25,7 @@ export const appRoutes: Route[] = [
     loadComponent: () =>
       import('@learn/gallery/feature').then((m) => m.GalleryComponent),
     providers: [
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       provideEffects(pictureEffects as any),
       provideState('Picture', pictureReducer),
     ],
@@ -49,5 +50,10 @@ export const appRoutes: Route[] = [
   {
     path: 'defer',
     loadComponent: () => import('@learn/defer').then((m) => m.DeferComponent),
+  },
+  {
+    path: 'tree',
+    loadComponent: () =>
+      import('@learn/tree').then((m) => m.TreeContainerComponent),
   },
 ];

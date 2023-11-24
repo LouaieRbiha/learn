@@ -24,6 +24,7 @@
       "@learn/shared/otp": ["libs/shared/otp/src/index.ts"],
       "@learn/shared/tabs": ["libs/shared/tabs/src/index.ts"],
       "@learn/signals": ["libs/signals/src/index.ts"],
+      "@learn/tree": ["libs/tree/src/index.ts"],
       "@learn/util": ["libs/util/src/index.ts"]
     }
   },

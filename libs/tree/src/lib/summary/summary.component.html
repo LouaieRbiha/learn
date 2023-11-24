@@ -1,0 +1,10 @@
+<mat-chip-listbox aria-label="chip selection">
+  @for (chip of data; track chip) {
+  <mat-chip-option [color]="chip.parent ?? 'accent'"
+    >{{ chip.item }}
+    <button matChipRemove aria-label="Remove orange" (click)="remove(chip)">
+      <mat-icon>cancel</mat-icon>
+    </button>
+  </mat-chip-option>
+  }
+</mat-chip-listbox>
