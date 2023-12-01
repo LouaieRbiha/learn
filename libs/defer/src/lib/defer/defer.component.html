@@ -1,36 +1,36 @@
 <div class="section">
   <p>Big section to add scroll to the page to test viewport</p>
 
-  @if(test){
-  <p>test is true</p>
+  @if (test) {
+    <p>test is true</p>
   } @else {
-  <p>test is false</p>
+    <p>test is false</p>
   }
 </div>
 
 @defer (on interaction; on timer(10s)) {
-<learn-otp></learn-otp>
-} @loading(minimum 3s){
-<div>Loading...</div>
+  <learn-otp></learn-otp>
+} @loading (minimum 3s) {
+  <div>Loading...</div>
 } @placeholder {
-<div>placeholder waiting for it to load</div>
+  <div>placeholder waiting for it to load</div>
 }
 
 <br />
 
 @defer (on interaction; prefetch on hover) {
-<learn-otp></learn-otp>
-} @loading(minimum 1s){
-<div>Loading...</div>
+  <learn-otp></learn-otp>
+} @loading (minimum 1s) {
+  <div>Loading...</div>
 } @placeholder {
-<div>placeholder waiting for it to load</div>
+  <div>placeholder waiting for it to load</div>
 }
 <br />
 
 @defer (on viewport) {
-<learn-otp></learn-otp>
-}@loading(minimum 2s) {
-<div>Component is inside viewport => start loading...</div>
+  <learn-otp></learn-otp>
+} @loading (minimum 2s) {
+  <div>Component is inside viewport => start loading...</div>
 } @placeholder {
-<p>placeholder shown when not on viewport</p>
+  <p>placeholder shown when not on viewport</p>
 }

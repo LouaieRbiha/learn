@@ -28,6 +28,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   providers: [ChecklistDatabaseService],
 })
 export class TreeComponent implements OnInit {
+  // change imports to nested maybe you will have the parent without adding it to the model
   @Output() selectionChanged = new EventEmitter<TodoItemFlatNode[]>();
 
   /** Map from flat node to nested node. This helps us finding the nested node to be modified */

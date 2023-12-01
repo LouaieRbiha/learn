@@ -14520,9 +14520,9 @@
       "type": "npm",
       "name": "npm:prettier",
       "data": {
-        "version": "2.6.2",
+        "version": "3.1.0",
         "packageName": "prettier",
-        "hash": "sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew=="
+        "hash": "sha512-TQLvXjq5IAibjh8EpBIkNKxO749UEWABoiIZehEPiY4GNpVdhaFKqSTu+QrlU6D2dPAfubRmtJTi4K4YkQ5eXw=="
       }
     },
     "npm:pretty-bytes": {
@@ -17767,6 +17767,11 @@
       },
       {
         "source": "tree",
+        "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "tree",
         "target": "npm:@angular/material",
         "type": "static"
       },
@@ -17778,11 +17783,6 @@
       {
         "source": "tree",
         "target": "npm:jest-preset-angular",
-        "type": "static"
-      },
-      {
-        "source": "tree",
-        "target": "npm:rxjs",
         "type": "static"
       }
     ],
