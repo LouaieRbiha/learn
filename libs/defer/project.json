@@ -31,14 +31,7 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "libs/defer/**/*.ts",
-          "libs/defer/**/*.html",
-          "libs/defer/package.json"
-        ]
-      }
+      "outputs": ["{options.outputFile}"]
     }
   }
 }

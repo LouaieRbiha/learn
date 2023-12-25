@@ -31,14 +31,7 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "libs/shared/otp/**/*.ts",
-          "libs/shared/otp/**/*.html",
-          "libs/shared/otp/package.json"
-        ]
-      }
+      "outputs": ["{options.outputFile}"]
     }
   }
 }

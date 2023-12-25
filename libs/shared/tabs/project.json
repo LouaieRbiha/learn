@@ -31,14 +31,7 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": [
-          "libs/shared/tabs/**/*.ts",
-          "libs/shared/tabs/**/*.html",
-          "libs/shared/tabs/package.json"
-        ]
-      }
+      "outputs": ["{options.outputFile}"]
     }
   }
 }
