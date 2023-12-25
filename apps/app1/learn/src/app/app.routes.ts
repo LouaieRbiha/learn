@@ -1,15 +1,10 @@
 import { Route } from '@angular/router';
-import { AppComponent } from './app.component';
 import { provideEffects } from '@ngrx/effects';
 import * as pictureEffects from '@learn/gallery/data-access';
 import { provideState } from '@ngrx/store';
 import { pictureReducer } from '@learn/gallery/data-access';
 
 export const appRoutes: Route[] = [
-  {
-    path: '',
-    component: AppComponent,
-  },
   {
     path: 'otp',
     loadComponent: () =>
@@ -55,5 +50,10 @@ export const appRoutes: Route[] = [
     path: 'tree',
     loadComponent: () =>
       import('@learn/tree').then((m) => m.TreeContainerComponent),
+  },
+  {
+    path: 'animation',
+    loadComponent: () =>
+      import('@learn/animation').then((m) => m.AnimationComponent),
   },
 ];

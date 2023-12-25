@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    @for (header of headers; track $index) {
+      <th>{{ header }}</th>
+    }
+  </tr>
+
+  @for (rowData of data; track $index) {
+    <tr>
+      <td>{{ rowData.title }}</td>
+      <td>{{ rowData.description }}</td>
+      <td>{{ rowData.url }}</td>
+      <td><button (click)="removeRow($index)">remove</button></td>
+    </tr>
+  }
+</table>

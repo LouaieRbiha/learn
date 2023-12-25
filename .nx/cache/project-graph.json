@@ -886,6 +886,98 @@
         "implicitDependencies": []
       }
     },
+    "animation": {
+      "name": "animation",
+      "type": "lib",
+      "data": {
+        "root": "libs/animation",
+        "name": "animation",
+        "targets": {
+          "nx-release-publish": {
+            "dependsOn": [
+              "^nx-release-publish"
+            ],
+            "executor": "@nx/js:release-publish",
+            "options": {},
+            "configurations": {}
+          },
+          "build": {
+            "dependsOn": [
+              "^build"
+            ],
+            "inputs": [
+              "production",
+              "^production"
+            ],
+            "cache": true,
+            "executor": "@nx/angular:ng-packagr-lite",
+            "outputs": [
+              "{workspaceRoot}/dist/{projectRoot}"
+            ],
+            "options": {
+              "project": "libs/animation/ng-package.json"
+            },
+            "configurations": {
+              "production": {
+                "tsConfig": "libs/animation/tsconfig.lib.prod.json"
+              },
+              "development": {
+                "tsConfig": "libs/animation/tsconfig.lib.json"
+              }
+            },
+            "defaultConfiguration": "production"
+          },
+          "test": {
+            "inputs": [
+              "default",
+              "^production",
+              "{workspaceRoot}/jest.preset.js"
+            ],
+            "cache": true,
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "passWithNoTests": true,
+              "jestConfig": "libs/animation/jest.config.ts"
+            },
+            "configurations": {
+              "ci": {
+                "ci": true,
+                "codeCoverage": true
+              }
+            }
+          },
+          "lint": {
+            "inputs": [
+              "default",
+              "{workspaceRoot}/.eslintrc.json",
+              "{workspaceRoot}/.eslintignore"
+            ],
+            "cache": true,
+            "executor": "@nx/eslint:lint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {
+              "lintFilePatterns": [
+                "libs/animation/**/*.ts",
+                "libs/animation/**/*.html",
+                "libs/animation/package.json"
+              ]
+            },
+            "configurations": {}
+          }
+        },
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "sourceRoot": "libs/animation/src",
+        "prefix": "learn",
+        "tags": [],
+        "projectType": "library",
+        "implicitDependencies": []
+      }
+    },
     "signals": {
       "name": "signals",
       "type": "lib",
@@ -3311,6 +3403,15 @@
         "hash": "sha512-5d1OkoJxnYQfmC+Zd8NBFjkhyCNYwM4n9ODrycTFY6Jk1IGiZ+tjVJDDSwDt77nK+tfpGP4T50iMtVi4dEGzhQ=="
       }
     },
+    "npm:@esbuild/android-arm64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/android-arm64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/android-arm64",
+        "hash": "sha512-q4cR+6ZD0938R19MyEW3jEsMzbb/1rulLXiNAJQADD/XYp7pT+rOS5JGxvpRW8dFDEfjW4wLgC/3FXIw4zYglQ=="
+      }
+    },
     "npm:@esbuild/android-arm@0.18.17": {
       "type": "npm",
       "name": "npm:@esbuild/android-arm@0.18.17",
@@ -3327,6 +3428,15 @@
         "version": "0.19.5",
         "packageName": "@esbuild/android-arm",
         "hash": "sha512-bhvbzWFF3CwMs5tbjf3ObfGqbl/17ict2/uwOSfr3wmxDE6VdS2GqY/FuzIPe0q0bdhj65zQsvqfArI9MY6+AA=="
+      }
+    },
+    "npm:@esbuild/android-arm@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/android-arm@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/android-arm",
+        "hash": "sha512-jkYjjq7SdsWuNI6b5quymW0oC83NN5FdRPuCbs9HZ02mfVdAP8B8eeqLSYU3gb6OJEaY5CQabtTFbqBf26H3GA=="
       }
     },
     "npm:@esbuild/android-x64@0.18.17": {
@@ -3347,6 +3457,15 @@
         "hash": "sha512-9t+28jHGL7uBdkBjL90QFxe7DVA+KGqWlHCF8ChTKyaKO//VLuoBricQCgwhOjA1/qOczsw843Fy4cbs4H3DVA=="
       }
     },
+    "npm:@esbuild/android-x64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/android-x64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/android-x64",
+        "hash": "sha512-KOqoPntWAH6ZxDwx1D6mRntIgZh9KodzgNOy5Ebt9ghzffOk9X2c1sPwtM9P+0eXbefnDhqYfkh5PLP5ULtWFA=="
+      }
+    },
     "npm:@esbuild/darwin-arm64@0.18.17": {
       "type": "npm",
       "name": "npm:@esbuild/darwin-arm64@0.18.17",
@@ -3363,6 +3482,15 @@
         "version": "0.19.5",
         "packageName": "@esbuild/darwin-arm64",
         "hash": "sha512-mvXGcKqqIqyKoxq26qEDPHJuBYUA5KizJncKOAf9eJQez+L9O+KfvNFu6nl7SCZ/gFb2QPaRqqmG0doSWlgkqw=="
+      }
+    },
+    "npm:@esbuild/darwin-arm64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/darwin-arm64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/darwin-arm64",
+        "hash": "sha512-KBJ9S0AFyLVx2E5D8W0vExqRW01WqRtczUZ8NRu+Pi+87opZn5tL4Y0xT0mA4FtHctd0ZgwNoN639fUUGlNIWw=="
       }
     },
     "npm:@esbuild/darwin-x64@0.18.17": {
@@ -3383,6 +3511,15 @@
         "hash": "sha512-Ly8cn6fGLNet19s0X4unjcniX24I0RqjPv+kurpXabZYSXGM4Pwpmf85WHJN3lAgB8GSth7s5A0r856S+4DyiA=="
       }
     },
+    "npm:@esbuild/darwin-x64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/darwin-x64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/darwin-x64",
+        "hash": "sha512-vE0VotmNTQaTdX0Q9dOHmMTao6ObjyPm58CHZr1UK7qpNleQyxlFlNCaHsHx6Uqv86VgPmR4o2wdNq3dP1qyDQ=="
+      }
+    },
     "npm:@esbuild/freebsd-arm64@0.18.17": {
       "type": "npm",
       "name": "npm:@esbuild/freebsd-arm64@0.18.17",
@@ -3399,6 +3536,15 @@
         "version": "0.19.5",
         "packageName": "@esbuild/freebsd-arm64",
         "hash": "sha512-GGDNnPWTmWE+DMchq1W8Sd0mUkL+APvJg3b11klSGUDvRXh70JqLAO56tubmq1s2cgpVCSKYywEiKBfju8JztQ=="
+      }
+    },
+    "npm:@esbuild/freebsd-arm64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/freebsd-arm64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/freebsd-arm64",
+        "hash": "sha512-uFQyd/o1IjiEk3rUHSwUKkqZwqdvuD8GevWF065eqgYfexcVkxh+IJgwTaGZVu59XczZGcN/YMh9uF1fWD8j1g=="
       }
     },
     "npm:@esbuild/freebsd-x64@0.18.17": {
@@ -3419,6 +3565,15 @@
         "hash": "sha512-1CCwDHnSSoA0HNwdfoNY0jLfJpd7ygaLAp5EHFos3VWJCRX9DMwWODf96s9TSse39Br7oOTLryRVmBoFwXbuuQ=="
       }
     },
+    "npm:@esbuild/freebsd-x64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/freebsd-x64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/freebsd-x64",
+        "hash": "sha512-WMLgWAtkdTbTu1AWacY7uoj/YtHthgqrqhf1OaEWnZb7PQgpt8eaA/F3LkV0E6K/Lc0cUr/uaVP/49iE4M4asA=="
+      }
+    },
     "npm:@esbuild/linux-arm64@0.18.17": {
       "type": "npm",
       "name": "npm:@esbuild/linux-arm64@0.18.17",
@@ -3435,6 +3590,15 @@
         "version": "0.19.5",
         "packageName": "@esbuild/linux-arm64",
         "hash": "sha512-o3vYippBmSrjjQUCEEiTZ2l+4yC0pVJD/Dl57WfPwwlvFkrxoSO7rmBZFii6kQB3Wrn/6GwJUPLU5t52eq2meA=="
+      }
+    },
+    "npm:@esbuild/linux-arm64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/linux-arm64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/linux-arm64",
+        "hash": "sha512-PiPblfe1BjK7WDAKR1Cr9O7VVPqVNpwFcPWgfn4xu0eMemzRp442hXyzF/fSwgrufI66FpHOEJk0yYdPInsmyQ=="
       }
     },
     "npm:@esbuild/linux-arm@0.18.17": {
@@ -3455,6 +3619,15 @@
         "hash": "sha512-lrWXLY/vJBzCPC51QN0HM71uWgIEpGSjSZZADQhq7DKhPcI6NH1IdzjfHkDQws2oNpJKpR13kv7/pFHBbDQDwQ=="
       }
     },
+    "npm:@esbuild/linux-arm@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/linux-arm@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/linux-arm",
+        "hash": "sha512-C/ChPohUYoyUaqn1h17m/6yt6OB14hbXvT8EgM1ZWaiiTYz7nWZR0SYmMnB5BzQA4GXl3BgBO1l8MYqL/He3qw=="
+      }
+    },
     "npm:@esbuild/linux-ia32@0.18.17": {
       "type": "npm",
       "name": "npm:@esbuild/linux-ia32@0.18.17",
@@ -3471,6 +3644,15 @@
         "version": "0.19.5",
         "packageName": "@esbuild/linux-ia32",
         "hash": "sha512-MkjHXS03AXAkNp1KKkhSKPOCYztRtK+KXDNkBa6P78F8Bw0ynknCSClO/ztGszILZtyO/lVKpa7MolbBZ6oJtQ=="
+      }
+    },
+    "npm:@esbuild/linux-ia32@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/linux-ia32@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/linux-ia32",
+        "hash": "sha512-f37i/0zE0MjDxijkPSQw1CO/7C27Eojqb+r3BbHVxMLkj8GCa78TrBZzvPyA/FNLUMzP3eyHCVkAopkKVja+6Q=="
       }
     },
     "npm:@esbuild/linux-loong64@0.18.17": {
@@ -3491,6 +3673,15 @@
         "hash": "sha512-42GwZMm5oYOD/JHqHska3Jg0r+XFb/fdZRX+WjADm3nLWLcIsN27YKtqxzQmGNJgu0AyXg4HtcSK9HuOk3v1Dw=="
       }
     },
+    "npm:@esbuild/linux-loong64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/linux-loong64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/linux-loong64",
+        "hash": "sha512-t6mN147pUIf3t6wUt3FeumoOTPfmv9Cc6DQlsVBpB7eCpLOqQDyWBP1ymXn1lDw4fNUSb/gBcKAmvTP49oIkaA=="
+      }
+    },
     "npm:@esbuild/linux-mips64el@0.18.17": {
       "type": "npm",
       "name": "npm:@esbuild/linux-mips64el@0.18.17",
@@ -3507,6 +3698,15 @@
         "version": "0.19.5",
         "packageName": "@esbuild/linux-mips64el",
         "hash": "sha512-kcjndCSMitUuPJobWCnwQ9lLjiLZUR3QLQmlgaBfMX23UEa7ZOrtufnRds+6WZtIS9HdTXqND4yH8NLoVVIkcg=="
+      }
+    },
+    "npm:@esbuild/linux-mips64el@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/linux-mips64el@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/linux-mips64el",
+        "hash": "sha512-jg9fujJTNTQBuDXdmAg1eeJUL4Jds7BklOTkkH80ZgQIoCTdQrDaHYgbFZyeTq8zbY+axgptncko3v9p5hLZtw=="
       }
     },
     "npm:@esbuild/linux-ppc64@0.18.17": {
@@ -3527,6 +3727,15 @@
         "hash": "sha512-yJAxJfHVm0ZbsiljbtFFP1BQKLc8kUF6+17tjQ78QjqjAQDnhULWiTA6u0FCDmYT1oOKS9PzZ2z0aBI+Mcyj7Q=="
       }
     },
+    "npm:@esbuild/linux-ppc64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/linux-ppc64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/linux-ppc64",
+        "hash": "sha512-tkV0xUX0pUUgY4ha7z5BbDS85uI7ABw3V1d0RNTii7E9lbmV8Z37Pup2tsLV46SQWzjOeyDi1Q7Wx2+QM8WaCQ=="
+      }
+    },
     "npm:@esbuild/linux-riscv64@0.18.17": {
       "type": "npm",
       "name": "npm:@esbuild/linux-riscv64@0.18.17",
@@ -3543,6 +3752,15 @@
         "version": "0.19.5",
         "packageName": "@esbuild/linux-riscv64",
         "hash": "sha512-5u8cIR/t3gaD6ad3wNt1MNRstAZO+aNyBxu2We8X31bA8XUNyamTVQwLDA1SLoPCUehNCymhBhK3Qim1433Zag=="
+      }
+    },
+    "npm:@esbuild/linux-riscv64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/linux-riscv64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/linux-riscv64",
+        "hash": "sha512-DfLp8dj91cufgPZDXr9p3FoR++m3ZJ6uIXsXrIvJdOjXVREtXuQCjfMfvmc3LScAVmLjcfloyVtpn43D56JFHg=="
       }
     },
     "npm:@esbuild/linux-s390x@0.18.17": {
@@ -3563,6 +3781,15 @@
         "hash": "sha512-Z6JrMyEw/EmZBD/OFEFpb+gao9xJ59ATsoTNlj39jVBbXqoZm4Xntu6wVmGPB/OATi1uk/DB+yeDPv2E8PqZGw=="
       }
     },
+    "npm:@esbuild/linux-s390x@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/linux-s390x@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/linux-s390x",
+        "hash": "sha512-zHbglfEdC88KMgCWpOl/zc6dDYJvWGLiUtmPRsr1OgCViu3z5GncvNVdf+6/56O2Ca8jUU+t1BW261V6kp8qdw=="
+      }
+    },
     "npm:@esbuild/linux-x64@0.18.17": {
       "type": "npm",
       "name": "npm:@esbuild/linux-x64@0.18.17",
@@ -3579,6 +3806,15 @@
         "version": "0.19.5",
         "packageName": "@esbuild/linux-x64",
         "hash": "sha512-psagl+2RlK1z8zWZOmVdImisMtrUxvwereIdyJTmtmHahJTKb64pAcqoPlx6CewPdvGvUKe2Jw+0Z/0qhSbG1A=="
+      }
+    },
+    "npm:@esbuild/linux-x64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/linux-x64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/linux-x64",
+        "hash": "sha512-JUjpystGFFmNrEHQnIVG8hKwvA2DN5o7RqiO1CVX8EN/F/gkCjkUMgVn6hzScpwnJtl2mPR6I9XV1oW8k9O+0A=="
       }
     },
     "npm:@esbuild/netbsd-x64@0.18.17": {
@@ -3599,6 +3835,15 @@
         "hash": "sha512-kL2l+xScnAy/E/3119OggX8SrWyBEcqAh8aOY1gr4gPvw76la2GlD4Ymf832UCVbmuWeTf2adkZDK+h0Z/fB4g=="
       }
     },
+    "npm:@esbuild/netbsd-x64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/netbsd-x64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/netbsd-x64",
+        "hash": "sha512-GThgZPAwOBOsheA2RUlW5UeroRfESwMq/guy8uEe3wJlAOjpOXuSevLRd70NZ37ZrpO6RHGHgEHvPg1h3S1Jug=="
+      }
+    },
     "npm:@esbuild/openbsd-x64@0.18.17": {
       "type": "npm",
       "name": "npm:@esbuild/openbsd-x64@0.18.17",
@@ -3615,6 +3860,15 @@
         "version": "0.19.5",
         "packageName": "@esbuild/openbsd-x64",
         "hash": "sha512-sPOfhtzFufQfTBgRnE1DIJjzsXukKSvZxloZbkJDG383q0awVAq600pc1nfqBcl0ice/WN9p4qLc39WhBShRTA=="
+      }
+    },
+    "npm:@esbuild/openbsd-x64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/openbsd-x64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/openbsd-x64",
+        "hash": "sha512-Ki6PlzppaFVbLnD8PtlVQfsYw4S9n3eQl87cqgeIw+O3sRr9IghpfSKY62mggdt1yCSZ8QWvTZ9jo9fjDSg9uw=="
       }
     },
     "npm:@esbuild/sunos-x64@0.18.17": {
@@ -3635,6 +3889,15 @@
         "hash": "sha512-dGZkBXaafuKLpDSjKcB0ax0FL36YXCvJNnztjKV+6CO82tTYVDSH2lifitJ29jxRMoUhgkg9a+VA/B03WK5lcg=="
       }
     },
+    "npm:@esbuild/sunos-x64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/sunos-x64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/sunos-x64",
+        "hash": "sha512-MLHj7k9hWh4y1ddkBpvRj2b9NCBhfgBt3VpWbHQnXRedVun/hC7sIyTGDGTfsGuXo4ebik2+3ShjcPbhtFwWDw=="
+      }
+    },
     "npm:@esbuild/win32-arm64@0.18.17": {
       "type": "npm",
       "name": "npm:@esbuild/win32-arm64@0.18.17",
@@ -3651,6 +3914,15 @@
         "version": "0.19.5",
         "packageName": "@esbuild/win32-arm64",
         "hash": "sha512-dWVjD9y03ilhdRQ6Xig1NWNgfLtf2o/STKTS+eZuF90fI2BhbwD6WlaiCGKptlqXlURVB5AUOxUj09LuwKGDTg=="
+      }
+    },
+    "npm:@esbuild/win32-arm64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/win32-arm64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/win32-arm64",
+        "hash": "sha512-GQoa6OrQ8G08guMFgeXPH7yE/8Dt0IfOGWJSfSH4uafwdC7rWwrfE6P9N8AtPGIjUzdo2+7bN8Xo3qC578olhg=="
       }
     },
     "npm:@esbuild/win32-ia32@0.18.17": {
@@ -3671,6 +3943,15 @@
         "hash": "sha512-4liggWIA4oDgUxqpZwrDhmEfAH4d0iljanDOK7AnVU89T6CzHon/ony8C5LeOdfgx60x5cnQJFZwEydVlYx4iw=="
       }
     },
+    "npm:@esbuild/win32-ia32@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/win32-ia32@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/win32-ia32",
+        "hash": "sha512-UOozV7Ntykvr5tSOlGCrqU3NBr3d8JqPes0QWN2WOXfvkWVGRajC+Ym0/Wj88fUgecUCLDdJPDF0Nna2UK3Qtg=="
+      }
+    },
     "npm:@esbuild/win32-x64@0.18.17": {
       "type": "npm",
       "name": "npm:@esbuild/win32-x64@0.18.17",
@@ -3687,6 +3968,15 @@
         "version": "0.19.5",
         "packageName": "@esbuild/win32-x64",
         "hash": "sha512-czTrygUsB/jlM8qEW5MD8bgYU2Xg14lo6kBDXW6HdxKjh8M5PzETGiSHaz9MtbXBYDloHNUAUW2tMiKW4KM9Mw=="
+      }
+    },
+    "npm:@esbuild/win32-x64@0.19.9": {
+      "type": "npm",
+      "name": "npm:@esbuild/win32-x64@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "@esbuild/win32-x64",
+        "hash": "sha512-oxoQgglOP7RH6iasDrhY+R/3cHrfwIDvRlT4CGChflq6twk8iENeVvMJjmvBb94Ik1Z+93iGO27err7w6l54GQ=="
       }
     },
     "npm:@eslint-community/eslint-utils": {
@@ -6159,9 +6449,9 @@
       "type": "npm",
       "name": "npm:@types/yauzl",
       "data": {
-        "version": "2.10.0",
+        "version": "2.10.3",
         "packageName": "@types/yauzl",
-        "hash": "sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw=="
+        "hash": "sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q=="
       }
     },
     "npm:@typescript-eslint/eslint-plugin": {
@@ -7581,18 +7871,9 @@
       "type": "npm",
       "name": "npm:caniuse-lite",
       "data": {
-        "version": "1.0.30001504",
+        "version": "1.0.30001568",
         "packageName": "caniuse-lite",
-        "hash": "sha512-5uo7eoOp2mKbWyfMXnGO9rJWOGU8duvzEiYITW+wivukL7yHH4gX9yuRaobu6El4jPxo6jKZfG+N6fB621GD/Q=="
-      }
-    },
-    "npm:caniuse-lite@1.0.30001562": {
-      "type": "npm",
-      "name": "npm:caniuse-lite@1.0.30001562",
-      "data": {
-        "version": "1.0.30001562",
-        "packageName": "caniuse-lite",
-        "hash": "sha512-kfte3Hym//51EdX4239i+Rmp20EsLIYGdPkERegTgU19hQWCRhsRFGKHTliUlsry53tv17K7n077Kqa0WJU4ng=="
+        "hash": "sha512-vSUkH84HontZJ88MiNrOau1EBrCqEQYgkC5gIySiDlpsm8sGVrhU7Kx4V6h0tnqaHzIHZv08HlJIwPbL4XL9+A=="
       }
     },
     "npm:caseless": {
@@ -9548,6 +9829,15 @@
         "hash": "sha512-bUxalY7b1g8vNhQKdB24QDmHeY4V4tw/s6Ak5z+jJX9laP5MoQseTOMemAr0gxssjNcH0MCViG8ONI2kksvfFQ=="
       }
     },
+    "npm:esbuild@0.19.9": {
+      "type": "npm",
+      "name": "npm:esbuild@0.19.9",
+      "data": {
+        "version": "0.19.9",
+        "packageName": "esbuild",
+        "hash": "sha512-U9CHtKSy+EpPsEBa+/A2gMs/h3ylBC0H0KSqIg7tpztHerLi6nrrcoUJAkNCEPumx8yJ+Byic4BVwHgRbN0TBg=="
+      }
+    },
     "npm:escalade": {
       "type": "npm",
       "name": "npm:escalade",
@@ -10371,9 +10661,9 @@
       "type": "npm",
       "name": "npm:fsevents",
       "data": {
-        "version": "2.3.2",
+        "version": "2.3.3",
         "packageName": "fsevents",
-        "hash": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
+        "hash": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw=="
       }
     },
     "npm:function-bind": {
@@ -13026,9 +13316,9 @@
       "type": "npm",
       "name": "npm:needle",
       "data": {
-        "version": "3.2.0",
+        "version": "3.3.0",
         "packageName": "needle",
-        "hash": "sha512-oUvzXnyLiVyVGoianLijF9O/RecZUf7TkBfimjGrLM4eQhXyeJwM6GeAWccwfQ9aa4gMCZKqhAOuLaMIcQxajQ=="
+        "hash": "sha512-Kaq820952NOrLY/LVbIhPZeXtCGDBAPVgT0BYnoT3p/Nr3nkGXdvWXXA3zgy7wpAgqRULu9p/NvKiFo6f/12fw=="
       }
     },
     "npm:negotiator": {
@@ -17652,6 +17942,11 @@
       },
       {
         "source": "app1-learn",
+        "target": "animation",
+        "type": "dynamic"
+      },
+      {
+        "source": "app1-learn",
         "target": "npm:jest-preset-angular",
         "type": "static"
       }
@@ -17679,6 +17974,28 @@
       },
       {
         "source": "shared-otp",
+        "target": "npm:jest-preset-angular",
+        "type": "static"
+      }
+    ],
+    "animation": [
+      {
+        "source": "animation",
+        "target": "npm:tslib",
+        "type": "static"
+      },
+      {
+        "source": "animation",
+        "target": "npm:@angular/common",
+        "type": "static"
+      },
+      {
+        "source": "animation",
+        "target": "npm:@angular/core",
+        "type": "static"
+      },
+      {
+        "source": "animation",
         "target": "npm:jest-preset-angular",
         "type": "static"
       }
@@ -29251,7 +29568,7 @@
       },
       {
         "source": "npm:autoprefixer",
-        "target": "npm:caniuse-lite@1.0.30001562",
+        "target": "npm:caniuse-lite",
         "type": "static"
       },
       {
@@ -30081,7 +30398,7 @@
     "npm:browserslist@4.22.1": [
       {
         "source": "npm:browserslist@4.22.1",
-        "target": "npm:caniuse-lite@1.0.30001562",
+        "target": "npm:caniuse-lite",
         "type": "static"
       },
       {
@@ -30215,7 +30532,7 @@
       },
       {
         "source": "npm:caniuse-api",
-        "target": "npm:caniuse-lite@1.0.30001562",
+        "target": "npm:caniuse-lite",
         "type": "static"
       },
       {
@@ -32660,6 +32977,118 @@
       {
         "source": "npm:esbuild",
         "target": "npm:@esbuild/win32-x64",
+        "type": "static"
+      }
+    ],
+    "npm:esbuild@0.19.9": [
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/android-arm@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/android-arm64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/android-x64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/darwin-arm64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/darwin-x64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/freebsd-arm64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/freebsd-x64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/linux-arm@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/linux-arm64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/linux-ia32@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/linux-loong64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/linux-mips64el@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/linux-ppc64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/linux-riscv64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/linux-s390x@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/linux-x64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/netbsd-x64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/openbsd-x64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/sunos-x64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/win32-arm64@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/win32-ia32@0.19.9",
+        "type": "static"
+      },
+      {
+        "source": "npm:esbuild@0.19.9",
+        "target": "npm:@esbuild/win32-x64@0.19.9",
         "type": "static"
       }
     ],
@@ -35630,7 +36059,7 @@
       },
       {
         "source": "npm:jest-preset-angular",
-        "target": "npm:esbuild",
+        "target": "npm:esbuild@0.19.9",
         "type": "static"
       }
     ],
@@ -37038,11 +37467,6 @@
     "npm:needle": [
       {
         "source": "npm:needle",
-        "target": "npm:debug@3.2.7",
-        "type": "static"
-      },
-      {
-        "source": "npm:needle",
         "target": "npm:iconv-lite",
         "type": "static"
       },
@@ -37190,7 +37614,7 @@
       },
       {
         "source": "npm:ng-packagr",
-        "target": "npm:esbuild",
+        "target": "npm:esbuild@0.19.9",
         "type": "static"
       }
     ],
@@ -41302,7 +41726,7 @@
       },
       {
         "source": "npm:ts-jest",
-        "target": "npm:esbuild",
+        "target": "npm:esbuild@0.19.9",
         "type": "static"
       },
       {
