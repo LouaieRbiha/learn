@@ -3,4 +3,13 @@
   flex-wrap: wrap;
 
   width: 100%;
+  view-transition-name: gallery;
+}
+
+::view-transition-old(gallery) {
+  animation: exit 0.5s ease 0s 1 normal forwards;
+}
+
+::view-transition-new(gallery) {
+  animation: enter 1s ease 0s 1 normal forwards;
 }

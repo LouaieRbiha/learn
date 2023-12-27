@@ -6,5 +6,6 @@ export const PictureActions = createActionGroup({
     'Load Pictures': emptyProps(),
     'Load Pictures Success': props<{ pictures: any }>(),
     'Load Pictures Failure': props<{ error: string }>(),
+    'Remove Picture': props<{ id: number }>(),
   },
 });

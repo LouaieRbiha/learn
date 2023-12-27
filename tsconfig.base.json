@@ -26,7 +26,8 @@
       "@learn/shared/tabs": ["libs/shared/tabs/src/index.ts"],
       "@learn/signals": ["libs/signals/src/index.ts"],
       "@learn/tree": ["libs/tree/src/index.ts"],
-      "@learn/util": ["libs/util/src/index.ts"]
+      "@learn/util": ["libs/util/src/index.ts"],
+      "@learn/view-transition": ["libs/view-transition/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

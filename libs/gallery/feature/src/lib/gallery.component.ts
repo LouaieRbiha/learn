@@ -21,4 +21,8 @@ export class GalleryComponent implements OnInit {
   ngOnInit(): void {
     this.#store.dispatch(PictureActions.loadPictures());
   }
+
+  removePicture(id: number) {
+    this.#store.dispatch(PictureActions.removePicture({ id }));
+  }
 }

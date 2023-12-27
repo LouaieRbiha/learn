@@ -1,5 +1,7 @@
-<img
-  *ngFor="let picture of pictures()"
-  [src]="picture.src.medium"
-  [alt]="picture.alt"
-/>
+<ng-container *ngFor="let picture of pictures()">
+  <img #galleryImage [src]="picture.src.medium" [alt]="picture.alt" />
+
+  <!-- <button (click)="removePicture(picture.id)">remove</button> -->
+  <button (click)="galleryImage.src = picture.src.large">big</button>
+  <button (click)="galleryImage.src = picture.src.tiny">tiny</button>
+</ng-container>

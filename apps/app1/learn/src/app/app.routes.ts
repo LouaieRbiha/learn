@@ -56,4 +56,9 @@ export const appRoutes: Route[] = [
     loadComponent: () =>
       import('@learn/animation').then((m) => m.AnimationComponent),
   },
+  {
+    path: 'view-transition',
+    loadComponent: () =>
+      import('@learn/view-transition').then((m) => m.ViewTransitionComponent),
+  },
 ];

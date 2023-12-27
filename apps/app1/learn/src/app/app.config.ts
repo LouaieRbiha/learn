@@ -7,6 +7,7 @@ import {
   provideRouter,
   withComponentInputBinding,
   withEnabledBlockingInitialNavigation,
+  withViewTransitions,
 } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
@@ -16,14 +17,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideStoreDevtools({ logOnly: !isDevMode() , connectInZone: true}),
+    provideStoreDevtools({ logOnly: !isDevMode(), connectInZone: true }),
     provideStore(),
     provideHttpClient(),
     importProvidersFrom([BrowserAnimationsModule]),
     provideRouter(
       appRoutes,
       withEnabledBlockingInitialNavigation(),
-      withComponentInputBinding()
+      withComponentInputBinding(),
+      withViewTransitions(),
     ),
   ],
 };
